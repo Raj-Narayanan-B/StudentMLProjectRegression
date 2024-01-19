@@ -10,4 +10,8 @@ dill
 flask
 flask_cors
 lime
+dvc
+dvc[s3]
+dagshub
+mlflow
 #-e .
