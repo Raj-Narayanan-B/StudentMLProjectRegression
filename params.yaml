@@ -1,0 +1,65 @@
+optuna:
+  Linear Regression:
+    fit_intercept: trial.suggest_categorical('fit_intercept',[True, False])
+
+  Lasso:
+    alpha: trial.suggest_float('alpha', .00001, 8.0)
+    selection: trial.suggest_categorical('selection',['cyclic', 'random'])
+
+  Ridge:
+    alpha: trial.suggest_float('alpha', .00001, 8.0)
+    solver: trial.suggest_categorical('solver',['auto', 'svd', 'cholesky', 'lsqr', 'sparse_cg', 'sag', 'saga', 'lbfgs'])
+
+  Random Forest:
+    n_estimators: trial.suggest_int('n_estimators', 100, 150)
+    criterion: trial.suggest_categorical('criterion', ['squared_error', 'friedman_mse', 'absolute_error', 'poisson'])
+    max_features: trial.suggest_categorical('max_features', ['sqrt', 'log2'])
+
+  Ada_Boost:
+    n_estimators: trial.suggest_int('n_estimators', 100, 150)
+    learning_rate: trial.suggest_float('learning_rate', .00001, 8.0)
+    loss: trial.suggest_categorical('loss', ['linear', 'square', 'exponential'])
+
+  Decision_Tree_Regressor:
+    criterion: trial.suggest_categorical('criterion', ['squared_error', 'friedman_mse', 'absolute_error', 'poisson'])
+    splitter: trial.suggest_categorical('splitter', ['best', 'random'])
+    max_features: trial.suggest_categorical('max_features', ['sqrt', 'log2'])
+
+  XGB_Regressor:
+    n_estimators: trial.suggest_int('n_estimators', 100, 200)
+    learning_rate: trial.suggest_float('learning_rate', .00001, 8.0)
+    booster: trial.suggest_categorical('booster', ['gbtree', 'gblinear', 'dart'])
+    tree_method: trial.suggest_categorical('tree_method', ['exact', 'approx', 'hist'])
+
+hyperopt:
+  Linear Regression:
+    fit_intercept: hp.choice('fit_intercept',[True, False])
+
+  Lasso:
+    alpha: hp.uniform('alpha', .00001, 8.0)
+    selection: hp.choice('selection',['cyclic', 'random'])
+
+  Ridge:
+    alpha: hp.uniform('alpha', .00001, 8.0)
+    solver: hp.choice('solver',['auto', 'svd', 'cholesky', 'lsqr', 'sparse_cg', 'sag', 'saga', 'lbfgs'])
+
+  Random Forest:
+    n_estimators: scope.int(hp.quniform('n_estimators', 100, 150, 1))
+    criterion: hp.choice('criterion', ['squared_error', 'friedman_mse', 'absolute_error', 'poisson'])
+    max_features: hp.choice('max_features', ['sqrt', 'log2'])
+
+  Ada_Boost:
+    n_estimators: scope.int(hp.quniform('n_estimators', 100, 150, 1))
+    learning_rate: hp.uniform('learning_rate', .00001, 8.0)
+    loss: hp.choice('loss', ['linear', 'square', 'exponential'])
+
+  Decision_Tree_Regressor:
+    criterion: hp.choice('criterion', ['squared_error', 'friedman_mse', 'absolute_error', 'poisson'])
+    splitter: hp.choice('splitter', ['best', 'random'])
+    max_features: hp.choice('max_features', ['sqrt', 'log2'])
+
+  XGB_Regressor:
+    n_estimators: scope.int(hp.quniform('n_estimators', 100, 200, 1))
+    learning_rate: hp.uniform('learning_rate', .00001, 8.0)
+    booster: hp.choice('booster', ['gbtree', 'gblinear', 'dart'])
+    tree_method: hp.choice('tree_method', ['exact', 'approx', 'hist'])
