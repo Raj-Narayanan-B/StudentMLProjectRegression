@@ -8,7 +8,7 @@ optuna:
 
   Ridge:
     alpha: trial.suggest_float('alpha', .00001, 8.0)
-    solver: trial.suggest_categorical('solver',['auto', 'svd', 'cholesky', 'lsqr', 'sparse_cg', 'sag', 'saga', 'lbfgs'])
+    solver: trial.suggest_categorical('solver',['auto', 'saga'])
 
   Random Forest:
     n_estimators: trial.suggest_int('n_estimators', 100, 150)
@@ -27,8 +27,8 @@ optuna:
 
   XGB_Regressor:
     n_estimators: trial.suggest_int('n_estimators', 100, 200)
-    learning_rate: trial.suggest_float('learning_rate', .00001, 8.0)
-    booster: trial.suggest_categorical('booster', ['gbtree', 'gblinear', 'dart'])
+    learning_rate: trial.suggest_float('learning_rate', .00001, 1)
+    # booster: trial.suggest_categorical('booster', ['gbtree', 'gblinear', 'dart'])
     tree_method: trial.suggest_categorical('tree_method', ['exact', 'approx', 'hist'])
 
 hyperopt:
@@ -41,7 +41,7 @@ hyperopt:
 
   Ridge:
     alpha: hp.uniform('alpha', .00001, 8.0)
-    solver: hp.choice('solver',['auto', 'svd', 'cholesky', 'lsqr', 'sparse_cg', 'sag', 'saga', 'lbfgs'])
+    solver: hp.choice('solver',['auto', 'saga'])
 
   Random Forest:
     n_estimators: scope.int(hp.quniform('n_estimators', 100, 150, 1))
@@ -60,6 +60,6 @@ hyperopt:
 
   XGB_Regressor:
     n_estimators: scope.int(hp.quniform('n_estimators', 100, 200, 1))
-    learning_rate: hp.uniform('learning_rate', .00001, 8.0)
-    booster: hp.choice('booster', ['gbtree', 'gblinear', 'dart'])
+    learning_rate: hp.uniform('learning_rate', .00001, 1)
+    # booster: hp.choice('booster', ['gbtree', 'gblinear', 'dart'])
     tree_method: hp.choice('tree_method', ['exact', 'approx', 'hist'])

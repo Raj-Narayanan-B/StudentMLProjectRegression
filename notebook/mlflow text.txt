@@ -1,0 +1,13 @@
+mlflow function should:
+
+    - log metrics
+    - log params
+    - infer signature
+    - log model
+    - Register Model..
+
+
+- The saving of champion model should have the schema and it's source run stored in the final model registering
+- The model choosing b/w hyperopt and optuna should be saved only at the end of hyperparameter tuning function. 
+    Not after every conclusion of a tuning process. i.e. only the champion among hyperopt and optuna models should be registered.
+    and not every hyperopt and optuna model.

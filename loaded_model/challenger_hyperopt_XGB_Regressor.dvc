@@ -1,0 +1,6 @@
+outs:
+- md5: 70f04317b374ace513017916ceaffddc.dir
+  size: 673123
+  nfiles: 5
+  hash: md5
+  path: challenger_hyperopt_XGB_Regressor

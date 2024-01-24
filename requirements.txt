@@ -9,9 +9,12 @@ xgboost
 dill
 flask
 flask_cors
+python-box
 lime
 dvc
 dvc[s3]
 dagshub
+optuna
+hyperopt
 mlflow
 #-e .
