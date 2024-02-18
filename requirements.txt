@@ -11,6 +11,7 @@ flask
 flask_cors
 python-box
 lime
+GitPython
 dvc
 dvc[s3]
 dagshub
