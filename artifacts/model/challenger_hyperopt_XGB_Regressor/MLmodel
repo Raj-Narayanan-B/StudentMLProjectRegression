@@ -1,0 +1,34 @@
+artifact_path: challenger_hyperopt_XGB_Regressor
+flavors:
+  python_function:
+    data: model.xgb
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.xgboost
+    python_version: 3.10.13
+  xgboost:
+    code: null
+    data: model.xgb
+    model_class: xgboost.sklearn.XGBRegressor
+    model_format: xgb
+    xgb_version: 2.0.3
+mlflow_version: 2.9.2
+model_size_bytes: 670984
+model_uuid: 2644d4cf61014fe2bbb0600888dab1ff
+run_id: 56c7e317b8c84c6592360e273f344d45
+signature:
+  inputs: '[{"type": "double", "name": "num_pipeline__carat"}, {"type": "double",
+    "name": "num_pipeline__depth"}, {"type": "double", "name": "num_pipeline__table"},
+    {"type": "double", "name": "num_pipeline__x"}, {"type": "double", "name": "num_pipeline__y"},
+    {"type": "double", "name": "num_pipeline__z"}, {"type": "double", "name": "cat_pipeline__cut"},
+    {"type": "double", "name": "cat_pipeline__color"}, {"type": "double", "name":
+    "cat_pipeline__clarity"}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "float32", "shape": [-1]}}]'
+  params: '[{"name": "objective", "type": "string", "default": "reg:squarederror",
+    "shape": null}, {"name": "enable_categorical", "type": "boolean", "default": false,
+    "shape": null}, {"name": "learning_rate", "type": "double", "default": 0.26050011078590574,
+    "shape": null}, {"name": "missing", "type": "double", "default": NaN, "shape":
+    null}, {"name": "n_estimators", "type": "integer", "default": 169, "shape": null},
+    {"name": "tree_method", "type": "string", "default": "hist", "shape": null}]'
+utc_time_created: '2024-01-23 17:49:47.156840'
